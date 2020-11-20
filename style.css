@@ -1,0 +1,88 @@
+/* ======== use for div guide ========== */
+* {
+  /* border: 1px gold solid; */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 4%;
+}
+
+/* =============================== */
+/* ========= Main Form =========== */
+/* =============================== */
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input {
+  border-radius: 6px;
+  width: 99%;
+  height: 2em;
+  font-size: 18px;
+}
+
+.comments {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.requiredInput {
+  border: 2px solid red;
+}
+
+.requiredText {
+  color: red;
+}
+
+.title {
+  border: 2px solid #e8e8e8;
+}
+
+.departments {
+  border: 2px solid #0066ff;
+}
+
+textarea {
+  border-radius: 4px;
+  border: 2px solid #e8e8e8;
+  width: 99%;
+  height: 5em;
+}
+/* =============================== */
+/* =========== Buttons =========== */
+/* =============================== */
+.button {
+  border-radius: 4px;
+  color: black;
+  padding: 10px 30px;
+  font-size: 18px;
+  background-color: white;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 1%;
+  justify-content: space-between;
+}
+
+.saveClose, .cancel {
+  border: 2px solid #e8e8e8;
+}
+
+.next {
+  background-color: #0066ff;
+  color: white;
+  margin-left: 5px;
+}
