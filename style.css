@@ -37,20 +37,16 @@ input {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.requiredInput {
-  border: 2px solid red;
-}
-
-.requiredText {
-  color: red;
-}
-
 .title {
   border: 2px solid #e8e8e8;
 }
 
+.location {
+  border: 2px solid #e8e8e8;
+}
+
 .departments {
-  border: 2px solid #0066ff;
+  border: 2px solid #e8e8e8;
 }
 
 textarea {
