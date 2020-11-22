@@ -16,11 +16,11 @@
         event.preventDefault();
 
         let title= $.trim($('#title-input').val());
+        $('#title-error').remove();
         if (title == '') {
-          const $h3 = $('<h3>')
-          $h3.text('Position Title is required')
-          $('.title-div').append($h3)
-          $('h3').attr('id', 'title-error')
+          const $h2 = $('<h2>').text('Position Title is required')
+          $('.title-div').append($h2)
+          $('h2').attr('id', 'title-error')
           $('#title-error').last().css('color', 'red');
           $('#title-input').css('border', '2px solid red')
         } else {
@@ -28,44 +28,45 @@
           $('#title-input').css('border', '2px solid #e8e8e8')
         }
 
-        let location= $.trim($('#location').val());
+        let location= $.trim($('#location-input').val());
+        $('#location-error').remove();
         if (location == '') {
-          const $h3 = $('<h3>')
-          $h3.text('Position Location is required')
-          $('.location-div').append($h3)
-          $('h3').attr('id', 'location-error')
+          const $h4 = $('<h4>').text('Position Location is required')
+          $('.location-div').append($h4)
+          $('h4').attr('id', 'location-error')
           $('#location-error').last().css('color', 'red');
           $('#location-input').css('border', '2px solid red')
         } else {
           $('#location-error').remove();
+          // $('.location-div').last().remove();
           $('#location-input').css('border', '2px solid #e8e8e8')
         }
 
-        let departments=$.trim($('#departments').val());
-        if (departments == '') {
-          const $h3 = $('<h3>')
-          $h3.text('Department is required')
-          $('.departments-div').append($h3)
-          $('h3').attr('id', 'departments-error')
-          $('#departments-error').last().css('color', 'red');
-          $('#departments-input').css('border', '2px solid red')
-        } else {
-          $('#departments-error').remove();
-          $('#departments-input').css('border', '2px solid #e8e8e8')
-        }
-
-        let comments=$.trim($('#comments').val());
-        if (comments == '') {
-          const $h3 = $('<h3>')
-          $h3.text('Comments are required')
-          $('.comment-div').append($h3)
-          $('h3').attr('id', 'comments-error')
-          $('#comments-error').last().css('color', 'red');
-          $('#comments-input').css('border', '2px solid red')
-        } else {
-          $('#comments-error').remove();
-          $('#comments-input').css('border', '2px solid #e8e8e8')
-        }
+        // let departments=$.trim($('#departments-input').val());
+        //   $('#departments-error').remove();
+        // if (departments == '') {
+        //   const $h4 = $('<h4>').text('Department is required')
+        //   $('.departments-div').append($h4)
+        //   $('h4').attr('id', 'departments-error')
+        //   $('#departments-error').last().css('color', 'red');
+        //   $('#departments-input').css('border', '2px solid red')
+        // } else {
+        //   $('#departments-error').remove();
+        //   $('#departments-input').css('border', '2px solid #e8e8e8')
+        // }
+        //
+        // let comments=$.trim($('#comments-input').val());
+        //   $('#comments-error').remove();
+        // if (comments == '') {
+        //   const $h5 = $('<h5>').text('Comments are required')
+        //   $('.comment-div').append($h5)
+        //   $('h5').attr('id', 'comments-error')
+        //   $('#comments-error').last().css('color', 'red');
+        //   $('#comments-input').css('border', '2px solid red')
+        // } else {
+        //   $('#comments-error').remove();
+        //   $('#comments-input').css('border', '2px solid #e8e8e8')
+        // }
       }
     </script>
 
@@ -116,7 +117,5 @@
         </div>
       </form>
     </div>
-
   </body>
-
 </html>
