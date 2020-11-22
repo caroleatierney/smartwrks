@@ -29,41 +29,35 @@ var duplicateNumbers = [8,24,20,5,13,3,1,12,11,24,8,24,20,4,5,23,24,23,21,2,19,3
 dupNumbers = () => {
   let changed=true;
   let dupArray=[];
-  let dup=0;
+  let dup=null;
 
   while (changed===true) {
-    let biggest= 0;
+    let bigger= 0;
     changed=false;
 
     // use a bubble sort to order the array
     // continue looping through the array until no more sorting needs to be done
     for (var i = 0; i < duplicateNumbers.length; i++) {
       if (duplicateNumbers[i] > duplicateNumbers[i+1]) {
-        biggest=duplicateNumbers[i];
+        bigger=duplicateNumbers[i];
         duplicateNumbers[i]=duplicateNumbers[i+1];
-        duplicateNumbers[i+1]=biggest;
+        duplicateNumbers[i+1]=bigger;
         changed=true
       }
     }
   }
-  // console.log(duplicateNumbers);
 
   // loop through sorted array and write to a new array for each duplicate number
   for (var i = 0; i < duplicateNumbers.length; i++) {
-
-    // console.log(duplicateNumbers[i]);
-
-
-    if (duplicateNumbers[i] = duplicateNumbers[i+1]) {
-      if (duplicateNumbers[i]!=dup) {
+    if (duplicateNumbers[i] === duplicateNumbers[i+1]) {
+      if (duplicateNumbers[i+1]!=dup) {
         dup=duplicateNumbers[i];
-        // console.log(duplicateNumbers[i]);
         dupArray.push(duplicateNumbers[i])
       }
     }
   }
-  console.log(dupArray);
-  console.log(duplicateNumbers);
+  console.log("dupArray", dupArray);
+  console.log("duplicateNumbers",duplicateNumbers);
 }
 
 // uncomment to test
