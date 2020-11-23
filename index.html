@@ -16,60 +16,89 @@
         event.preventDefault();
 
         let title= $.trim($('#title-input').val());
-        $('#title-error').remove();
+        $('.divTitle').remove();
         if (title == '') {
-          const $h2 = $('<h2>').text('Position Title is required')
-          $('.title-div').append($h2)
-          $('h2').attr('id', 'title-error')
-          $('#title-error').last().css('color', 'red');
-          $('#title-input').css('border', '2px solid red')
+          const $divTitle=$('<div>');
+          $divTitle.addClass('divTitle');
+          const $h2 = $('<h2>').text('Position Title is required');
+          $divTitle.append($h2);
+          $('.title-div').append($divTitle);
+          $('.divTitle').css('color', 'red');
+          $('#title-input').css('border', '2px solid red');
         } else {
-          $('#title-error').remove();
-          $('#title-input').css('border', '2px solid #e8e8e8')
+          $('.divTitle').remove();
+          $('#title-input').css('border', '2px solid #e8e8e8');
         }
 
         let location= $.trim($('#location-input').val());
-        $('#location-error').remove();
+        $('.divLocation').remove();
         if (location == '') {
-          const $h4 = $('<h4>').text('Position Location is required')
-          $('.location-div').append($h4)
-          $('h4').attr('id', 'location-error')
-          $('#location-error').last().css('color', 'red');
-          $('#location-input').css('border', '2px solid red')
+          const $divLocation=$('<div>');
+          $divLocation.addClass('divLocation');
+          const $h2 = $('<h2>').text('Position Location is required');
+          $divLocation.append($h2);
+          $('.location-div').append($divLocation);
+          $('.divLocation').css('color', 'red');
+          $('#location-input').css('border', '2px solid red');
         } else {
-          $('#location-error').remove();
-          // $('.location-div').last().remove();
-          $('#location-input').css('border', '2px solid #e8e8e8')
+          $('.divLocation').remove();
+          $('#location-input').css('border', '2px solid #e8e8e8');
         }
 
-        // let departments=$.trim($('#departments-input').val());
-        //   $('#departments-error').remove();
-        // if (departments == '') {
-        //   const $h4 = $('<h4>').text('Department is required')
-        //   $('.departments-div').append($h4)
-        //   $('h4').attr('id', 'departments-error')
-        //   $('#departments-error').last().css('color', 'red');
-        //   $('#departments-input').css('border', '2px solid red')
-        // } else {
-        //   $('#departments-error').remove();
-        //   $('#departments-input').css('border', '2px solid #e8e8e8')
-        // }
-        //
-        // let comments=$.trim($('#comments-input').val());
-        //   $('#comments-error').remove();
-        // if (comments == '') {
-        //   const $h5 = $('<h5>').text('Comments are required')
-        //   $('.comment-div').append($h5)
-        //   $('h5').attr('id', 'comments-error')
-        //   $('#comments-error').last().css('color', 'red');
-        //   $('#comments-input').css('border', '2px solid red')
-        // } else {
-        //   $('#comments-error').remove();
-        //   $('#comments-input').css('border', '2px solid #e8e8e8')
-        // }
+        let departments=$.trim($('#departments-input').val());
+        $('.divDepartments').remove();
+        if (departments == '') {
+          const $divDepartments= $('<div>');
+          $divDepartments.addClass('divDepartments');
+          const $h2 = $('<h2>').text('Department is required');
+          $divDepartments.append($h2);
+          $('.departments-div').append($divDepartments);
+          $('.divDepartments').css('color', 'red');
+          $('#departments-input').css('border', '2px solid red');
+        } else {
+          $('.divDepartments').remove();
+          $('#departments-input').css('border', '2px solid #e8e8e8');
+        }
+
+        let comments=$.trim($('#comments-input').val());
+        $('.divComments').remove();
+        if (comments == '') {
+          const $divComments= $('<div>');
+          $divComments.addClass('divComments');
+          const $h2 = $('<h2>').text('Comments are required');
+          $divComments.append($h2);
+          $('.comments-div').append($divComments);
+          $('.divComments').css('color', 'red');
+          $('#comments-input').css('border', '2px solid red');
+        } else {
+          $('.divComments').remove();
+          $('#comments-input').css('border', '2px solid #e8e8e8');
+        }
+
+        $('.button').on('click', event => {
+          event = $(event.target).attr('id');
+          if (event=='cancel') {
+            $('.container').remove();
+            const $divLeave = $('<div>');
+            $divLeave.addClass('divLeave')
+            const $h1 = $('<h1>').text('Thank you for visiting!');
+            $divLeave.append($h1);
+            const $h1a = $('<h1>').text('Have a nice day!')
+            $divLeave.append($h1a);
+            $('body').append($divLeave);
+          } else if (event='saveLeave') {
+            $('.container').remove();
+            const $divLeave = $('<div>');
+            $divLeave.addClass('divLeave')
+            const $h1 = $('<h1>').text('Your information was saved.');
+            $divLeave.append($h1);
+            const $h1a = $('<h1>').text('Come back soon to complete it.')
+            $divLeave.append($h1a);
+            $('body').append($divLeave);
+          }
+        });
       }
     </script>
-
   </head>
 
   <body>
@@ -78,42 +107,40 @@
 
       <!-- form container -->
       <form name='open_position' onsubmit='return(validation());'>
-        <div class='main'>
 
           <h1>Enter Open Position Information</h1>
 
           <div class='title-div'>
             <h3>Position Title</h3>
-            <input class='title' id='title-input' type='text' name='title'>
+            <input class='input' id='title-input' type='text' name='title' class='form-control no-gray'>
           </div>
 
           <div class='location-div'>
             <h3>Position Location</h3>
-            <input class='location' id='location-input' type='text' name='location'>
+            <input class='input' id='location-input' type='text' name='location'>
           </div>
 
           <div class='departments-div'>
             <h3>Departments</h3>
-            <input class='departments' id='departments-input' type='text' name='departments'>
+            <input class='input' id='departments-input' type='text' name='departments'>
           </div>
 
-          <div class='comment-div'>
+          <div class='comments-div'>
             <h3>Comments</h3>
-            <textarea class='comments' id='comments-input' name='comments'></textarea>
+            <textarea id='comments-input' name='comments'></textarea>
           </div>
-
-        </div>
 
         <!-- buttons container -->
         <div class='buttons-container'>
           <div class='buttonLeft'>
-            <button class='button cancel' type='button' name='cancel'>Cancel</button>
+            <button class='button cancel' type='button' id='cancel' name='cancel'>Cancel</button>
           </div>
 
           <div class='buttonsRight'>
             <button class='button saveClose' type='button' name='saveClose'>Save & Close</button>
 
-            <button class='button next' type='submit' name='next'>Next &#62</button>
+            <button class='button next' type='submit' id='saveLeave' name='next'>Next &#62</button>
+          </div>
         </div>
       </form>
     </div>
