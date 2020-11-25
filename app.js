@@ -18,8 +18,7 @@ fizzBuzz = () => {
   }
 }
 
-// uncomment to test
-// fizzBuzz();
+fizzBuzz();
 
 // =================================
 // ======== Duplicate array ========
@@ -56,9 +55,8 @@ dupNumbers = () => {
       }
     }
   }
-  console.log("dupArray", dupArray);
-  console.log("duplicateNumbers",duplicateNumbers);
+  console.log("Duplicate number array", dupArray);
+  // console.log("duplicateNumbers",duplicateNumbers);
 }
 
-// uncomment to test
 dupNumbers();

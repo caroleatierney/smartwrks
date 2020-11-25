@@ -9,15 +9,49 @@
     <script
       src='https://code.jquery.com/jquery-3.5.1.min.js'
       integrity='sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0='
-      crossorigin='anonymous'></script>
+      crossorigin='anonymous'>
+    </script>
 
     <script>
+
+    $( document ).ready(function(){
+      console.log('Ready!!!');
+    });
       function validation() {
+
         event.preventDefault();
+        error = 0;
+
+        $('button').on('click', event => {
+
+          event = $(event.target).attr('id');
+          if (event=='cancel') {
+            $('.container').remove();
+            const $divLeave = $('<div>');
+            $divLeave.addClass('divLeave');
+            const $h1 = $('<h1>').text('Thank you for visiting!');
+            $divLeave.append($h1);
+            const $h1a = $('<h1>').text('Have a nice day!')
+            $divLeave.append($h1a);
+            $('body').append($divLeave);
+            return;
+          } else if (event=='saveLeave') {
+            $('.container').remove();
+            const $divLeave = $('<div>');
+            $divLeave.addClass('divLeave');
+            const $h1 = $('<h1>').text('Your information was saved.');
+            $divLeave.append($h1);
+            const $h1a = $('<h1>').text('Come back soon to complete it.')
+            $divLeave.append($h1a);
+            $('body').append($divLeave);
+            return;
+          }
+        });
 
         let title= $.trim($('#title-input').val());
         $('.divTitle').remove();
         if (title == '') {
+          error ++;
           const $divTitle=$('<div>');
           $divTitle.addClass('divTitle');
           const $h2 = $('<h2>').text('Position Title is required');
@@ -33,6 +67,7 @@
         let location= $.trim($('#location-input').val());
         $('.divLocation').remove();
         if (location == '') {
+          error ++;
           const $divLocation=$('<div>');
           $divLocation.addClass('divLocation');
           const $h2 = $('<h2>').text('Position Location is required');
@@ -48,6 +83,7 @@
         let departments=$.trim($('#departments-input').val());
         $('.divDepartments').remove();
         if (departments == '') {
+          error ++;
           const $divDepartments= $('<div>');
           $divDepartments.addClass('divDepartments');
           const $h2 = $('<h2>').text('Department is required');
@@ -63,6 +99,7 @@
         let comments=$.trim($('#comments-input').val());
         $('.divComments').remove();
         if (comments == '') {
+          error ++;
           const $divComments= $('<div>');
           $divComments.addClass('divComments');
           const $h2 = $('<h2>').text('Comments are required');
@@ -75,29 +112,18 @@
           $('#comments-input').css('border', '2px solid #e8e8e8');
         }
 
-        $('.button').on('click', event => {
-          event = $(event.target).attr('id');
-          if (event=='cancel') {
-            $('.container').remove();
-            const $divLeave = $('<div>');
-            $divLeave.addClass('divLeave')
-            const $h1 = $('<h1>').text('Thank you for visiting!');
-            $divLeave.append($h1);
-            const $h1a = $('<h1>').text('Have a nice day!')
-            $divLeave.append($h1a);
-            $('body').append($divLeave);
-          } else if (event='saveLeave') {
-            $('.container').remove();
-            const $divLeave = $('<div>');
-            $divLeave.addClass('divLeave')
-            const $h1 = $('<h1>').text('Your information was saved.');
-            $divLeave.append($h1);
-            const $h1a = $('<h1>').text('Come back soon to complete it.')
-            $divLeave.append($h1a);
-            $('body').append($divLeave);
-          }
-        });
+        if (error==0) {
+          $('.container').remove();
+          const $divLeave = $('<div>');
+          $divLeave.addClass('divLeave');
+          const $h1 = $('<h1>').text('Thank you.');
+          $divLeave.append($h1);
+          const $h1a = $('<h1>').text('Your position information was received successfully.')
+          $divLeave.append($h1a);
+          $('body').append($divLeave);
+        }
       }
+
     </script>
   </head>
 
@@ -106,7 +132,7 @@
     <div class='container'>
 
       <!-- form container -->
-      <form name='open_position' onsubmit='return(validation());'>
+        <form name='open_position' onsubmit='return(validation());'>
 
           <h1>Enter Open Position Information</h1>
 
@@ -137,9 +163,9 @@
           </div>
 
           <div class='buttonsRight'>
-            <button class='button saveClose' type='button' name='saveClose'>Save & Close</button>
+            <button class='button saveClose' type='button' id='saveLeave' name='saveClose'>Save & Close</button>
 
-            <button class='button next' type='submit' id='saveLeave' name='next'>Next &#62</button>
+            <input class='button next' type='submit' name='next' value='Next &#62'/>
           </div>
         </div>
       </form>
