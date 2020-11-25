@@ -59,10 +59,10 @@
           $divTitle.append($h2);
           $('.title-div').append($divTitle);
           $('.divTitle').css('color', 'red');
-          $('#title-input').css('border', '2px solid red');
+          $('#title-input').css('box-shadow', '0px 0px 7px 1px red');
         } else {
           $('.divTitle').remove();
-          $('#title-input').css('border', '2px solid #e8e8e8');
+          $('#title-input').css({'border': '2px solid #e8e8e8', 'box-shadow': 'none'});
         }
 
         let location= $.trim($('#location-input').val());
@@ -75,26 +75,26 @@
           $divLocation.append($h2);
           $('.location-div').append($divLocation);
           $('.divLocation').css('color', 'red');
-          $('#location-input').css('border', '2px solid red');
+          $('#location-input').css('box-shadow', '0px 0px 7px 1px red');
         } else {
           $('.divLocation').remove();
-          $('#location-input').css('border', '2px solid #e8e8e8');
+          $('#location-input').css({'border': '2px solid #e8e8e8', 'box-shadow': 'none'});
         }
 
-        let departments=$.trim($('#departments-input').val());
-        $('.divDepartments').remove();
-        if (departments == '') {
+        let department=$.trim($('#department-input').val());
+        $('.divdepartment').remove();
+        if (department == '') {
           error ++;
-          const $divDepartments= $('<div>');
-          $divDepartments.addClass('divDepartments');
+          const $divdepartment= $('<div>');
+          $divdepartment.addClass('divdepartment');
           const $h2 = $('<h2>').text('Department is required');
-          $divDepartments.append($h2);
-          $('.departments-div').append($divDepartments);
-          $('.divDepartments').css('color', 'red');
-          $('#departments-input').css('border', '2px solid red');
+          $divdepartment.append($h2);
+          $('.department-div').append($divdepartment);
+          $('.divdepartment').css('color', 'red');
+          $('#department-input').css('box-shadow', '0px 0px 7px 1px red');
         } else {
-          $('.divDepartments').remove();
-          $('#departments-input').css('border', '2px solid #e8e8e8');
+          $('.divdepartment').remove();
+          $('#department-input').css({'border': '2px solid #e8e8e8', 'box-shadow': 'none'});
         }
 
         let comments=$.trim($('#comments-input').val());
@@ -107,10 +107,10 @@
           $divComments.append($h2);
           $('.comments-div').append($divComments);
           $('.divComments').css('color', 'red');
-          $('#comments-input').css('border', '2px solid red');
+          $('#comments-input').css('box-shadow', '0px 0px 7px 1px red');
         } else {
           $('.divComments').remove();
-          $('#comments-input').css('border', '2px solid #e8e8e8');
+          $('#comments-input').css({'border': '2px solid #e8e8e8', 'box-shadow': 'none'});
         }
 
         if (error==0) {
@@ -133,29 +133,29 @@
     <div class='container'>
 
       <!-- form container -->
-        <form name='open_position' onsubmit='return(validation());'>
+      <form name='open_position' onsubmit='return(validation());'>
 
-          <h1>Enter Open Position Information</h1>
+        <h1>Enter Open Position Information</h1>
 
-          <div class='title-div'>
-            <h3>Position Title</h3>
-            <input class='input' id='title-input' type='text' name='title' class='form-control no-gray'>
-          </div>
+        <div class='title-div'>
+          <h3>Position Title</h3>
+          <input class='input' id='title-input' type='text' name='title' class='form-control no-gray'>
+        </div>
 
-          <div class='location-div'>
-            <h3>Position Location</h3>
-            <input class='input' id='location-input' type='text' name='location'>
-          </div>
+        <div class='location-div'>
+          <h3>Position Location</h3>
+          <input class='input' id='location-input' type='text' name='location'>
+        </div>
 
-          <div class='departments-div'>
-            <h3>Departments</h3>
-            <input class='input' id='departments-input' type='text' name='departments'>
-          </div>
+        <div class='department-div'>
+          <h3>Department</h3>
+          <input class='input' id='department-input' type='text' name='department'>
+        </div>
 
-          <div class='comments-div'>
-            <h3>Comments</h3>
-            <textarea id='comments-input' name='comments'></textarea>
-          </div>
+        <div class='comments-div'>
+          <h3>Comments</h3>
+          <textarea id='comments-input' name='comments'></textarea>
+        </div>
 
         <!-- buttons container -->
         <div class='buttons-container'>
@@ -169,7 +169,6 @@
             <input class='button next' type='submit' name='next' value='Next &#62'/>
           </div>
         </div>
-        
       </form>
     </div>
   </body>

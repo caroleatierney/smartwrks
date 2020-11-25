@@ -8,10 +8,18 @@ body {
   font-size: 18px;
 }
 
+h1 {
+  font-weight: lighter;
+}
+
+h3 {
+  font-weight: bolder;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   margin: 4%;
 }
 
@@ -21,40 +29,54 @@ body {
 
 .input {
   border-radius: 6px;
-  width: 100%;
+  width: 98.1%;
   height: 2em;
   font-size: 18px;
   border: 2px solid #e8e8e8;
   background-color: white;
+  padding-left: 1%;
+  color: #708090;
 }
 
-.comments {
-  width: 100%;
+.input:focus {
+  outline: none !important;
+  border: 1px solid #4684c7 !important;
+  box-shadow: 0 0 10px #4684c7 !important;
 }
 
 textarea {
   font-family: Arial, Helvetica, sans-serif;
-  border-radius: 4px;
+  border-radius: 6px;
   border: 2px solid #e8e8e8;
   height: 5em;
-  width: 100%;
+  width: 98.1%;
   font-size: 18px;
+  padding-left: 1%;
+  color: #708090;
 }
+
+textarea:focus {
+  outline: none !important;
+  border: 1px solid #4684c7 !important;
+  box-shadow: 0 0 10px #4684c7 !important;
+}
+
 /* =============================== */
 /* =========== Buttons =========== */
 /* =============================== */
 .button {
-  border-radius: 4px;
+  border-radius: 6px;
   color: black;
-  padding: 10px 30px;
-  font-size: 18px;
+  padding: 12px 17px 12px 17px;
+  font-size: 20px;
   background-color: white;
 }
 
 .buttons-container {
   display: flex;
   flex-direction: row;
-  padding-top: 1%;
+  margin-top: 25px;
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -63,9 +85,10 @@ textarea {
 }
 
 .next {
-  background-color: #0066ff;
+  background-color: #4684c7;
   color: white;
   margin-left: 5px;
+  border: none;
 }
 
 /* =============================== */
