@@ -23,11 +23,12 @@
         event.preventDefault();
         error = 0;
 
-        $('button').on('click', event => {
+        $('.button').on('click', event => {
 
           event = $(event.target).attr('id');
           if (event=='cancel') {
             $('.container').remove();
+            $('.divLeave').remove();
             const $divLeave = $('<div>');
             $divLeave.addClass('divLeave');
             const $h1 = $('<h1>').text('Thank you for visiting!');
@@ -36,8 +37,9 @@
             $divLeave.append($h1a);
             $('body').append($divLeave);
             return;
-          } else if (event=='saveLeave') {
+          } else if (event=='saveClose') {
             $('.container').remove();
+            $('.divLeave').remove();
             const $divLeave = $('<div>');
             $divLeave.addClass('divLeave');
             const $h1 = $('<h1>').text('Your information was saved.');
@@ -164,9 +166,10 @@
           </div>
 
           <div class='buttonsRight'>
-            <button class='button saveClose' type='button' id='saveLeave' name='saveClose'>Save & Close</button>
+            <button class='button saveClose' type='button' id='saveClose' name='saveClose'>Save & Close</button>
 
-            <input class='button next' type='submit' name='next' value='Next &#62'/>
+            <button class='next' type='submit' id='next' name='next'>Next &#62</button>
+            <!-- <input class='next' type='submit' id='next' name='next' value='Next &#62'/> -->
           </div>
         </div>
       </form>
