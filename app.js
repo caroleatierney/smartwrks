@@ -56,7 +56,7 @@ dupNumbers = () => {
     }
   }
   console.log("Duplicate number array", dupArray);
-  // console.log("duplicateNumbers",duplicateNumbers);
+  // console.log("duplicate numbers array",duplicateNumbers);
 }
 
 dupNumbers();
